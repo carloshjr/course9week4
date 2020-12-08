@@ -1,0 +1,51 @@
+---
+title: "Course Project: Shiny Application and Reproducible Pitch"
+author: "Carlos Henrique"
+date: "12/07/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## What is expected with the assignment
+
+It is required to create a Shiny application and deploy it on Rstudio's servers. 
+
+The application must include the following:
+
+1. Some form of input (widget: textbox, radio button, checkbox, ...)
+2. Some operation on the ui input in sever.R
+3. Some reactive output displayed as a result of server calculations
+4. You must also include enough documentation so that a novice user could use your application.
+5. The documentation should be at the Shiny website itself. Do not post to an external link.
+
+## Brief introduction of my shiny app1
+
+The data set used is "longley" as a supporting material. It gives a macroeconomic data set which provides a well-known example for a highly collinear regression.
+
+```{r longley, echo = TRUE}
+plot(longley$GNP, longley$Employed)
+```
+
+## Brief introduction of my shiny app2
+
+Based on the simple analysis, we can tell the number of people employed has a linear correlation with the GNP. 
+Source: J. W. Longley (1967) *An appraisal of least-squares programs from the point of view of the user*. **Journal of the American Statistical Association 62**, 819–841.
+
+```{r, echo=FALSE}
+plot(longley$GNP, longley$Employed)
+pred <- lm(longley$Employed ~ longley$GNP)
+abline(pred, col = "red")
+```
+
+## Brief introduction of my shiny app3
+
+So here's a shiny app to predict the number of people employed by entering the GNP, observed yearly from 1947 to 1962.
+
+You can find my shiny app at : <https://carlos-henrique-campos.shinyapps.io/CourseProject/>
+
+The ui.R and server.R code can be found at : <https://github.com/carloshjr/course9week4>
+
+Thank you!
